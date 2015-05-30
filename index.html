@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title>GOOGLE I/O SOLVER</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
+  <link href="css/roboto.min.css" rel="stylesheet">
+  <link href="css/material.min.css" rel="stylesheet">
+  <link href="css/ripples.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Google I/O Solver</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Questions Answered: <span id="questions-answered">0</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container" id="instruction-area">
+    <h1 style="margin-top:0">Welcome</h1>
+    <p>This tool will try its best to solve the Google I/O easter egg questions for you
+      and predict answers.</p>
+    <p>First, we'll need your token from the API:</p>
+
+    <div class="input-group">
+      <span class="input-group-addon" id="token-input-label">Token:</span>
+      <input type="text" class="form-control" aria-describedby="token-input-label" id="token-input"></input>
+    </div>
+
+    <button type="button" id="btn-next" class="btn btn-success">Go Forth</button>
+  </div>
+
+  <div class="container" id="question-area" style="display:none">
+    <h1 style="margin-top:0" id="question-title">Loading...</h1>
+
+    <div class="input-group">
+      <span class="input-group-addon" id="answer-input-label">Answer:</span>
+      <input type="text" class="form-control" aria-describedby="answer-input-label" id="answer-input"></input>
+    </div>
+
+    <button type="button" id="btn-answer" class="btn btn-lg btn-success">Answer</button>
+
+    <h2>Suggestions</h2>
+    <div id="suggestion-area">
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+  <script src="js/ripples.min.js"></script>
+  <script src="js/material.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // This command is used to initialize some elements and make them work properly
+      $.material.init();
+    });
+  </script>
+  <script src="js/solver.js"></script>
+</body>
+</html>
